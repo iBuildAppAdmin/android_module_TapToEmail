@@ -1,4 +1,4 @@
-# ios_module_TapToEmail
+# android_module_TapToEmail
 Module calls the mail-client with predefined settings
 
 **XML Structure declaration**
