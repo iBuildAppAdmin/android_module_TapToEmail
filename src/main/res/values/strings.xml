@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MainActivity</string>
+    
+    <string name="common_alert_cannot_initialize_plugin">Cannot initialize plugin</string>
+    
+    <string name="taptoemail_need_internet_connection">Cannot send message. Turn on wi-fi or mobile internet</string>
+    <string name="taptoemail_send_mail">Send mail...</string>
+</resources>

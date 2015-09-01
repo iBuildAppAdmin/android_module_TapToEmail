@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="email">Почта</string>
+    <string name="send_to">Адрес:</string>
+    <string name="add">Добавить</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="subject">Тема</string>
+    <string name="common_home_upper">Домой</string>
+</resources>
