@@ -1,4 +1,4 @@
-# android_module_TapToEmail
+# android module TapToEmail
 Module calls the mail-client with predefined settings
 
 **XML Structure declaration**
