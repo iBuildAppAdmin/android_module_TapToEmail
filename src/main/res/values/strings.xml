@@ -6,4 +6,5 @@
     
     <string name="taptoemail_need_internet_connection">Cannot send message. Turn on wi-fi or mobile internet</string>
     <string name="taptoemail_send_mail">Send mail...</string>
+    <string name="choose_email_client">Choose an Email client</string>
 </resources>

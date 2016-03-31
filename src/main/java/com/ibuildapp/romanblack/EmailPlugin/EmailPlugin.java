@@ -20,6 +20,8 @@ import android.os.Message;
 import android.text.Html;
 import android.util.Xml;
 import android.widget.Toast;
+
+import com.appbuilder.sdk.android.StartUpActivity;
 import com.appbuilder.sdk.android.Widget;
 
 import java.util.List;
@@ -31,6 +33,7 @@ import org.xml.sax.helpers.DefaultHandler;
  * Main module class. Module entry point.
  * Represents tap to email widget.
  */
+@StartUpActivity(moduleName = "Email")
 public class EmailPlugin extends Activity {
 
     private final int INITIALIZATION_FAILED = 0;
@@ -113,9 +116,9 @@ public class EmailPlugin extends Activity {
         Intent it = new Intent(Intent.ACTION_SEND);
         it.setType("plain/text");
         it.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{emailAddress});
-        it.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
+        //it.putExtra(android.content.Intent.EXTRA_SUBJECT, subject);
         it.putExtra(android.content.Intent.EXTRA_TEXT, Html.fromHtml(message));
-        startActivity(Intent.createChooser(it, ""));
+        startActivity(Intent.createChooser(it, getString(R.string.choose_email_client)));
 
         finish();
     }
