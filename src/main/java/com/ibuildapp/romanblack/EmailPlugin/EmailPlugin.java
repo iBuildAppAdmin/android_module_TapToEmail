@@ -22,6 +22,7 @@ import android.util.Xml;
 import android.widget.Toast;
 
 import com.appbuilder.sdk.android.StartUpActivity;
+import com.appbuilder.sdk.android.Utils;
 import com.appbuilder.sdk.android.Widget;
 
 import java.util.List;
@@ -81,16 +82,9 @@ public class EmailPlugin extends Activity {
         super.onCreate(savedInstanceState);
 
         Intent currentIntent = getIntent();
-        Widget widget = (Widget) currentIntent.getSerializableExtra(EXTRA_WIDGET);
+        final Widget widget = (Widget) currentIntent.getSerializableExtra(EXTRA_WIDGET);
 
         if (widget == null) {
-            handler.sendEmptyMessage(INITIALIZATION_FAILED);
-            return;
-        }
-
-        final String pluginXmlData = widget.getPluginXmlData();
-
-        if (pluginXmlData.length() == 0) {
             handler.sendEmptyMessage(INITIALIZATION_FAILED);
             return;
         }
@@ -99,6 +93,10 @@ public class EmailPlugin extends Activity {
             @Override
             public void run() {
                 try {
+                    String pluginXmlData = widget.getPluginXmlData().length() == 0
+                            ? Utils.readXmlFromFile(widget.getPathToXmlFile())
+                            : widget.getPluginXmlData();
+
                     Xml.parse(pluginXmlData, new SAXHandler());
 
                     handler.sendEmptyMessage(START_SENDING_EMAIL);
